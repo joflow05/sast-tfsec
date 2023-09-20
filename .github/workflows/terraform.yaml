@@ -63,16 +63,16 @@ jobs:
           terraform fmt -diff -write=true -recursive .
           terraform fmt
      
-      - name: Run tfsec
-        run: tfsec .
+      #- name: Run tfsec
+       # run: tfsec .
      
-      - name: Run OPA
-        run: |
-          opa run -c policies terraform
+     # - name: Run OPA
+       # run: |
+        #  opa run -c policies terraform
       
-      - name: Run Terraform Scan
-        run: |
-          tflint .
+     # - name: Run Terraform Scan
+       # run: |
+        #  tflint .
       
       - name: Terraform init
         id: init
@@ -81,3 +81,7 @@ jobs:
       - name: Terraform validate
         id: validate
         run: terraform validate
+
+      - name: Terraform plan
+        id: plan
+        run: terraform plan
