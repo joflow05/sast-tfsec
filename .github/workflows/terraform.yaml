@@ -8,6 +8,13 @@ on:
     branches:
     - main
 
+permissions:
+  id-token: write
+  pull-requests: write
+  statuses: write
+  actions: read
+  contents: read
+
 jobs:
   build:
     name: build
